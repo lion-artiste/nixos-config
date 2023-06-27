@@ -34,8 +34,8 @@
           ./hardware-configuration.nix
           ./base.nix
           ./hosts/lionmusique.nix
-          ./modules/kde.nix
-          #./modules/nvidia.nix
+          ./modules/gnome.nix
+          ./modules/nvidia.nix
         ];
       };
     };
