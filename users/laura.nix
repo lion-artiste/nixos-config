@@ -1,9 +1,29 @@
 { config, pkgs, lib, ... }:
 
 {
-  # TODO please change the username & home directory to your own
-  home.username = "lion";
-  home.homeDirectory = lib.mkForce "/home/lion";
+  home.username = "laura";
+  home.homeDirectory = lib.mkForce "/home/laura";
+
+  imports = [
+    ../modules/davinci-resolve.nix
+  ]
+
+  dconf.settings = {
+    "org/gnome/shell" = {
+      favorite-apps = ["firefox.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Console.desktop" "gimp.desktop" "org.gnome.Settings.desktop" "filezilla.desktop"];
+    };
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+      gtk-theme = "Adwaita-dark";
+      clock-show-seconds = true;
+      clock-show-weekday = true;
+      enable-hot-corners = false;
+    };
+    "org/gnome/mutter" = {
+      edge-tiling = true;
+      dynamic-workspaces = true;
+    };
+  };
 
   # link the configuration file in current directory to the specified location in home directory
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
@@ -23,25 +43,8 @@
   # basic configuration of git, please change to your own
   programs.git = {
     enable = true;
-    userName = "Lion Artiste";
-    userEmail = "lionmusicofficiel@gmail.com";
-  };
-
-  dconf.settings = {
-    "org/gnome/shell" = {
-      favorite-apps = ["firefox.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Console.desktop" "gimp.desktop" "org.gnome.Settings.desktop" "filezilla.desktop"];
-    };
-    "org/gnome/desktop/interface" = {
-      color-scheme = "prefer-dark";
-      gtk-theme = "Adwaita-dark";
-      clock-show-seconds = true;
-      clock-show-weekday = true;
-      enable-hot-corners = false;
-    };
-    "org/gnome/mutter" = {
-      edge-tiling = true;
-      dynamic-workspaces = true;
-    };
+    userName = "Raphaël";
+    userEmail = "raphael.graff.m@gmail.com";
   };
 
   # Packages that should be installed to the user profile.
@@ -56,24 +59,7 @@
     p7zip
 
     firefox
-    reaper
-    bitwig-studio
-    python311
-    python311Packages.pip
-    pavucontrol
-    qpwgraph
-    gnome.gnome-tweaks
-    gnomeExtensions.blur-my-shell
-    libsForQt5.kdenlive
-    vscodium
-    podman
-    distrobox
-    surge-XT
-    airwindows-lv2
-    dragonfly-reverb
-    guitarix
-    lsp-plugins
-    sfizz
+    bottles
   ];
 
   # starship - an customizable prompt for any shell

@@ -5,7 +5,7 @@ with lib;
 {
 
   # Kernel configuration for real-time audio
-  boot.kernelParams = [
+  boot.kernelParams = lib.mkForce [
     "quiet"
     "splash"
     "mitigations=off"

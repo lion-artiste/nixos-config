@@ -17,6 +17,7 @@
         };
 
         kernelPackages = pkgs.linuxPackages_latest;
+        kernelParams = lib.mkDefault [ "quiet" "splash" ];
     };
 
     nix = {
@@ -69,7 +70,9 @@
         #excludePackages = [ pkgs.xterm ];
     };
 
-    environment.sessionVariables.NIXOS_OZONE_WL = "1";
+    environment.sessionVariables = {
+        NIXOS_OZONE_WL = "1";
+    };
 
     # Configure console keymap
     console.keyMap = "fr";

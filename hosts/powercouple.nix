@@ -5,21 +5,27 @@
 
 {
   imports = [
-    ../modules/music-production.nix
     home-manager.nixosModules.home-manager {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
-      home-manager.users.lion = import ../users/lion.nix;
+      home-manager.users.raphael = import ../users/raphael.nix;
+      home-manager.users.laura = import ../users/laura.nix;
     }
   ];
 
     networking = {
-        hostName = lib.mkForce "lionmusique";
+        hostName = lib.mkForce "powercouple";
     };
 
-  users.users.lion = {
+  users.users.raphael = {
     isNormalUser = true;
-    description = "Lion";
-    extraGroups = [ "networkmanager" "wheel" "pipewire"];
+    description = "Raphaël";
+    extraGroups = [ "networkmanager" "wheel"];
+  };
+
+  users.users.laura = {
+    isNormalUser = true;
+    description = "Laura";
+    extraGroups = [ "networkmanager" "wheel"];
   };
 }

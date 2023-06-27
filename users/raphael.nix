@@ -1,9 +1,13 @@
 { config, pkgs, lib, ... }:
 
 {
-  # TODO please change the username & home directory to your own
-  home.username = "lion";
-  home.homeDirectory = lib.mkForce "/home/lion";
+  # TODO please change the username & home direcotry to your own
+  home.username = "raphael";
+  home.homeDirectory = lib.mkForce "/home/raphael";
+
+  imports = [
+    ../modules/davinci-resolve.nix
+  ]
 
   # link the configuration file in current directory to the specified location in home directory
   # home.file.".config/i3/wallpaper.jpg".source = ./wallpaper.jpg;
@@ -23,8 +27,8 @@
   # basic configuration of git, please change to your own
   programs.git = {
     enable = true;
-    userName = "Lion Artiste";
-    userEmail = "lionmusicofficiel@gmail.com";
+    userName = "Raphaël";
+    userEmail = "raphael.graff.m@gmail.com";
   };
 
   dconf.settings = {
@@ -56,24 +60,21 @@
     p7zip
 
     firefox
-    reaper
-    bitwig-studio
+    filezilla
+    davinci-resolve
+    gimp
+    vscodium
+    inkscape
+    python311
+    neofetch
     python311
     python311Packages.pip
-    pavucontrol
-    qpwgraph
     gnome.gnome-tweaks
     gnomeExtensions.blur-my-shell
     libsForQt5.kdenlive
     vscodium
     podman
     distrobox
-    surge-XT
-    airwindows-lv2
-    dragonfly-reverb
-    guitarix
-    lsp-plugins
-    sfizz
   ];
 
   # starship - an customizable prompt for any shell

@@ -7,4 +7,6 @@
         desktopManager.gnome.enable = lib.mkDefault true;
         excludePackages = [ pkgs.xterm ];
     };
+
+    programs.dconf.enable = true;
 }
