@@ -6,7 +6,7 @@
 
   imports = [
     ../modules/davinci-resolve.nix
-  ]
+  ];
 
   dconf.settings = {
     "org/gnome/shell" = {
