@@ -31,7 +31,6 @@
         system = "x86_64-linux";
         specialArgs = inputs;
         modules = [
-          ./hardware-configuration.nix
           ./base.nix
           ./hosts/lionmusique.nix
           ./modules/gnome.nix
@@ -42,8 +41,8 @@
         system = "x86_64-linux";
         specialArgs = inputs;
         modules = [
-          ./hardware-configuration.nix
           ./base.nix
+          ./modules/davinci-resolve.nix
           ./hosts/powercouple.nix
           ./modules/gnome.nix
           ./modules/nvidia.nix

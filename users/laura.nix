@@ -4,10 +4,6 @@
   home.username = "laura";
   home.homeDirectory = lib.mkForce "/home/laura";
 
-  imports = [
-    ../modules/davinci-resolve.nix
-  ];
-
   dconf.settings = {
     "org/gnome/shell" = {
       favorite-apps = ["firefox.desktop" "org.gnome.Nautilus.desktop" "org.gnome.Console.desktop" "gimp.desktop" "org.gnome.Settings.desktop" "filezilla.desktop"];

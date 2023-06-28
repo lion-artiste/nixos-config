@@ -6,14 +6,17 @@
 
     hardware = {
         nvidia = {
-            package = config.boot.kernelPackages.nvidiaPackages.stable;
+            #package = config.boot.kernelPackages.nvidiaPackages.stable;
             modesetting.enable = true;
             open = true;
-            nvidiaSettings = true;
+            #nvidiaSettings = true;
+            powerManagement.enable = true;
         };
 
         opengl = {
             enable = true;
+            driSupport = true;
+            driSupport32Bit = true;
         };
     };
 }

@@ -1,14 +1,14 @@
 config = lion # Possible values : lion
 
 deploy:
-	sudo nixos-rebuild switch --flake .#${config}
+	sudo nixos-rebuild boot --flake .#${config}
 
 debug:
-	sudo nixos-rebuild switch --flake .#${config} --show-trace --verbose
+	sudo nixos-rebuild boot --flake .#${config} --show-trace --verbose
 
 update:
 	nix flake update
-	sudo nixos-rebuild switch --flake .#${config}
+	sudo nixos-rebuild boot --flake .#${config}
 
 history:
 	nix profile history --profile /nix/var/nix/profiles/system

@@ -1,10 +1,10 @@
 { config, pkgs, lib, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      #/etc/nixos/hardware-configuration.nix
-    ];
+    imports =
+        [ # Include the results of the hardware scan.
+            ./hardware-configuration.nix
+        ];
 
     # Bootloader.
     boot = {
@@ -63,11 +63,6 @@
         enable = lib.mkDefault true;
         layout = "fr";
         xkbVariant = "";
-
-        # Enable the GNOME Desktop Environment.
-        #displayManager.gdm.enable = lib.mkDefault true;
-        #desktopManager.gnome.enable = lib.mkDefault true;
-        #excludePackages = [ pkgs.xterm ];
     };
 
     environment.sessionVariables = {
