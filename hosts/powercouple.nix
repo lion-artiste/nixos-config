@@ -13,9 +13,12 @@
     }
   ];
 
-    networking = {
-        hostName = lib.mkForce "powercouple";
-    };
+  networking = {
+      hostName = lib.mkForce "powercouple";
+  };
+
+  programs.hyprland.enable = true;
+  programs.hyprland.nvidiaPatches = true;
 
   users.users.raphael = {
     isNormalUser = true;

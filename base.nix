@@ -16,7 +16,7 @@
             efi.canTouchEfiVariables = true;
         };
 
-        #kernelPackages = pkgs.linuxPackages_latest;
+        kernelPackages = pkgs.linuxPackages_6_3;
         kernelParams = lib.mkDefault [ "quiet" "splash" ];
     };
 
@@ -102,6 +102,7 @@
         curl
         neofetch
         gnumake
+        waybar
     ];
 
     system.stateVersion = "23.05"; # Did you read the comment?

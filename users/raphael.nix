@@ -71,6 +71,7 @@
     vscodium
     podman
     distrobox
+    kitty
   ];
 
   # starship - an customizable prompt for any shell
